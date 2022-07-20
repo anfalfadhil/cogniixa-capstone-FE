@@ -1,0 +1,98 @@
+{
+  "tweets": [
+    {
+      "id": 1,
+      "like": [],
+      "username": "Foo Bar",
+      "text": "First dummy tweet by Foo Bar",
+      "comments": [
+        {
+          "id": 1,
+          "text": "some comment here",
+          "tweet": 1,
+          "author": "Ironman"
+        },
+        {
+          "id": 2,
+          "text": "some comment here from different user",
+          "tweet": 1,
+          "author": "Spiderman"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "like": [],
+      "username": "Buzz Lightyear",
+      "text": "First dummy tweet by Buzz",
+      "comments": [
+        {
+          "id": 1,
+          "text": "some comment here",
+          "tweet": 1,
+          "author": "Woody"
+        },
+        {
+          "id": 2,
+          "text": "some comment here from different user",
+          "tweet": 1,
+          "author": "Rex"
+        }
+      ]
+    },
+    {
+      "text": "test",
+      "user": "111",
+      "like": [],
+      "comments": [],
+      "id": 3
+    },
+    {
+      "text": "test",
+      "user": "22",
+      "like": [],
+      "comments": [],
+      "id": 4
+    },
+    {
+      "text": "test",
+      "user": "33",
+      "like": [],
+      "comments": [],
+      "id": 5
+    },
+    {
+      "text": "tt",
+      "user": "100",
+      "like": [],
+      "comments": [],
+      "id": 6
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "Ironman",
+      "email": "iron@man.com",
+      "password": "ironman"
+    },
+    {
+      "username": "batman",
+      "email": "anfalfadhil90@gmail.com",
+      "password": "batman",
+      "id": 2
+    },
+    {
+      "username": "Alexa",
+      "email": "anfalfadhil90@gmail.com",
+      "password": "batman",
+      "id": 3
+    },
+    {
+      "username": "Sarah",
+      "email": "sarah@s.com",
+      "password": "sarah",
+      "id": 4
+    }
+  ]
+}
