@@ -1,4 +1,4 @@
-let url = 'http://localhost:8080/tweets'
+let url = 'http://localhost:8080/api/tweet'
 
 
 const TweetApi = {

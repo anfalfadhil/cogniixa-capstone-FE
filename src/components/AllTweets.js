@@ -10,7 +10,7 @@ function AllTweets() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:8080/tweets')
+      .get('http://localhost:8080/api/tweet/all')
       .then((response) => {
         // return response.json();
         console.log(response.data);

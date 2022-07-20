@@ -9,6 +9,7 @@ const Signup =() => {
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [created,setCreated] = useState(false)
 
 
     const navigate = useNavigate();
@@ -16,6 +17,13 @@ const Signup =() => {
         navigate("/login");
       };
 
+
+      const redirectToHome = () => {
+        if (created) {
+            alert("WELCOME!!!")
+            navigateToLogin();
+        }
+    }
 
     const signupHandler = (event) => {
 
@@ -35,10 +43,16 @@ const Signup =() => {
         setUsername("")
         setEmail("")
         setPassword("")
+        setCreated(true)
 
-        navigateToLogin();
+
+        redirectToHome()
+        
 
     }
+
+
+
 
     return (
         <div>

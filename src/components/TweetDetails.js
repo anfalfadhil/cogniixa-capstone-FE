@@ -29,53 +29,11 @@ function TweetDetails({ match }) {
     }, [match.params.id]);
 
 
-    //fetch the comments from db passing the tweet's id 
-    // useEffect(() => {
-    //     axios
-    //     //url for comment table
-    //         .get(`${URL}/${match.params.id}`)
-    //         .then((response) => {
-    //             setComments(response.data);
-    //         })
-    //         .catch(function (error) {
-    //             console.log(error);
-    //         });
-    // }, [match.params.id]);
-
-
-
-    //fetch the likes from the likes table passing the tweet id
-    // const like = () => {
-    //     axios
-    //         .get(`${URL}/${match.params.id}`)
-    //         .then((response) => {
-                
-    //             );
-
-    // };
 
 
 
 
 
-    // const deletetweet = () => {
-    //     const url = `${URL}/${match.params.id}`;
-
-    //     axios
-    //         .delete(url)
-    //         .then((response) => {
-    //             setDeleted(true);
-    //         })
-    //         .catch(console.error);
-    // };
-
-
-
-
-
-    // if (deleted) {
-    //     return <Redirect to="/" />;
-    // }
 
 
 
@@ -85,8 +43,6 @@ function TweetDetails({ match }) {
         <div >
             <h2>{tweet.username} </h2>
             <p> {tweet.text} </p>
-            {/* <Button onClick={like} >{showLikes} 👍</Button> */}
-            {/* <Button onClick={deletetweet} > Delete </Button> */}
         </div>
     );
 }

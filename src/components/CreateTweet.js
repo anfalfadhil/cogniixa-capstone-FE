@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import TweetApi from '../apis/TweetApi'
 import { useNavigate } from 'react-router-dom';
+import UserApi from "../apis/UserApi";
 
 
 const CreateTweet = props => {
 
-    let url = 'http://localhost:8080/tweets'
+    
     const [tweet, setTweet] = useState("");
-    const [userid, setUserid] = useState(0);
+    const [user, setUser] = useState({});
     const [created, setCreated] = useState(false);
     const [error, setError] = useState(false);
 
@@ -20,18 +21,23 @@ const CreateTweet = props => {
 
 
 
+      const getUserByIdEntered = (id) => {
+        const fetchedUser = UserApi.getById(id);
+        setUser(fetchedUser);
+      }
+
     const addTweetHandler = (event) => {
+        getUserByIdEntered(user)
+        console.log("Hello")
         event.preventDefault()
         console.log("Hello")
-
         console.log("tweet: " + tweet);
-        console.log("userid: " + userid);
+        console.log("user: " + user);
 
         const created_tweet = {
-                    // db name exactly????????
                     "text": tweet,
-                    "user": userid,
-                    "like": [],
+                    "user": user,
+                    "likes": [],
                     "comments": []
                 }
 
@@ -39,7 +45,7 @@ const CreateTweet = props => {
         TweetApi.createTweet(created_tweet)
 
         setTweet("")
-        setUserid(0)
+        setUser(0)
         setCreated(true);
         
         
@@ -60,8 +66,8 @@ const CreateTweet = props => {
             <form onSubmit={addTweetHandler}>
                <h2> Tweet: </h2>
                 <input type="text" name="tweet" value={tweet} onChange={(event )=> {setTweet(event.target.value)}} />
-                <input type="number" name="userid" value={userid} onChange={(event) => {setUserid(event.target.value)}}/>
-                <input type="submit" value="tweett" />
+                <input type="number" name="user" value={user} onChange={(event) => {setUser(event.target.value)}}/>
+                <input type="submit" value="tweet" />
             </form>
         </div>
         
