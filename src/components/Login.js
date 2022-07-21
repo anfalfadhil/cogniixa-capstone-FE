@@ -5,25 +5,25 @@ import UserApi from "../apis/UserApi";
 import axios from '../apis/axios'
 
 
-const LOGIN_URL = '/authenticate'
+const LOGIN_URL = 'http://localhost:8080/authenticate'
 const Login = () => {
 
-    const { setAuth } = useContext(AuthContext);
-   const userRef = useRef();
-   const errRef = useRef();
 
-   
 
-    let url = 'http://localhost:8080/tweets'
+
+
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
-    const [errMsg, setErrMsg] = useState('')
+    const [errMsg, setErrMsg] = useState("Failed to login")
     const [success, setSuccess] = useState(false)
+    const [token, setToken] = useState("")
+    const [thisUser, setThisUser] = useState({})
 
 
-    // useEffect(() => {
-    //     userRef.current.focus();
-    // }, [])
+    const user = {
+        "username": username,
+        "password": password
+    }
 
 
     useEffect(() => {
@@ -36,71 +36,48 @@ const Login = () => {
       };
 
 
-      const LoginHandler = (event) => {
-
-        event.preventDefault();
-
-        console.log("user name: " + username);
-        console.log("password: " + password);
-
-        const user = {
-            "username": username,
-            "password": password
-        }
-
-        UserApi.loginUser(user)
-        setUsername("")
-        setPassword("")
-
-        navigateToTweets();
-
-    }
-
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(username, password);
 
 
+         fetch(LOGIN_URL, {
+            method: 'POST', 
+            body: JSON.stringify(user),
+            headers: {"Content-Type": "application/json"}
+        })
+        .then (response => {
+            console.log(response);
+            return response.json();
+        })
+        .then( (data) => {
+            console.log(data.jwt)
+            setToken(data.jwt)
+            sessionStorage.setItem("Authentication", "Bearer " + token);
+            sessionStorage.setItem("Principal", "ROLE_USER");
+            
+        })
+        .catch(error => console.log(error))
 
-        try {
-        const response = await axios.post(LOGIN_URL, JSON.stringify({username, password},
-            {
-                headers: { 'Content-Type':'application/json'},
-                withCredentials: true,
-                
-            }))
+      
 
-
-        console.log(JSON.stringify(response?.data));
-        // console.log(JSON.stringify(response?.data));
-
-        const accessToken = response?.data.accessToken;
-        const roles = response?.data?.roles;
-        setAuth({ username, password, roles, accessToken });
         setSuccess(true);
         setUsername('');
         setPassword('');
+        // navigateToTweets();
+
+        // const thisUser = {
+        //     "Authentication" : sessionStorage.getItem("Authentication"),
+        //     "Principal" : sessionStorage.getItem("Principal")
+        // }
+
+
+        // console.log("befor this user")
+        // UserApi.thisUser(thisUser);
+        // console.log(UserApi.thisUser(thisUser))
+        console.log("after this user")
         navigateToTweets();
-
-        } catch (err) {
-
-            if (!err?.response ) {
-                setErrMsg("No server response");
-            } else if (err.response?.status === 400) {
-                setErrMsg("Missing username or password")
-            
-            } else if ( err.response?.status === 401) {
-                setErrMsg("Unauthorized");
-            
-            } else {
-                setErrMsg(" Login Failed");
-            }
-
-
-
-        }
-
         
     }
 
@@ -110,14 +87,7 @@ const Login = () => {
 
         <div>
             <h2>Log in</h2>
-            {/* <form onSubmit={LoginHandler}>
-            <input type="text" name="username" value={username} onChange={(event )=> {setUsername(event.target.value)}} />
-            <input type="text" name="password" value={password} onChange={(event) => {setPassword(event.target.value)}}/>
-            <input type="submit" value="Login" />
-            
-            </form> */}
-
-
+ 
             <p className= {errMsg? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
             <form onSubmit={handleSubmit}>
 
@@ -125,7 +95,6 @@ const Login = () => {
                 <label htmlFor="username">Username</label>
                 <input type="text"
                         id="username"
-                        // ref={userRef}
                         onChange={(e) => setUsername(e.target.value)}
                         value={username}
                         required
@@ -140,17 +109,8 @@ const Login = () => {
                         value={password}
                         required
                   />
-
-
                   <button>Log in</button>
-
-
-
-
-
             </form>
-
-
         </div>)
 }
 

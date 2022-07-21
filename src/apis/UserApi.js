@@ -12,7 +12,6 @@ const UserApi = {
 
         fetch(`${url}/${id}`, {
             method: 'GET', 
-            body: JSON.stringify(id),
             headers: {"Content-Type": "application/json" }
         })
         .then (response => {
@@ -41,11 +40,27 @@ const UserApi = {
         .catch(error => console.log(error))
     },
 
-    loginUser: (user) => {
+    loginUser: (user, token) => {
         fetch(loginURL, {
             method: 'POST', 
             body: JSON.stringify(user),
-            headers: {"Content-Type": "application/json" }
+            headers: {"Content-Type": "application/json", "Authentication":  "Bearer " + token }
+        })
+        .then (response => {
+            console.log(response);
+            return response.json();
+        })
+        .then( (data) => {
+            console.log(data)
+        })
+        .catch(error => console.log(error))
+    },
+
+    thisUser: ( thisUser ) => {
+        fetch(url, {
+            method: 'GET', 
+            // body: JSON.stringify(),
+            headers: {"Content-Type": "application/json", "Authentication":  "Bearer " + thisUser.Authentication, "Principal": thisUser.Principal }
         })
         .then (response => {
             console.log(response);

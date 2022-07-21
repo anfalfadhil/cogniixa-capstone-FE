@@ -46,7 +46,7 @@ const Signup =() => {
         setCreated(true)
 
 
-        redirectToHome()
+        navigateToLogin()
         
 
     }

@@ -9,6 +9,7 @@ const CreateTweet = props => {
     
     const [tweet, setTweet] = useState("");
     const [user, setUser] = useState({});
+    const [userid, setUserid] = useState(0);
     const [created, setCreated] = useState(false);
     const [error, setError] = useState(false);
 
@@ -28,11 +29,11 @@ const CreateTweet = props => {
 
     const addTweetHandler = (event) => {
         event.preventDefault()
-        getUserByIdEntered(user)
+        getUserByIdEntered(userid)
         console.log("Hello")
         
-        console.log("Hello")
         console.log("tweet: " + tweet);
+        console.log("userid: " + userid);
         console.log("user: " + user);
 
         const created_tweet = {
@@ -67,7 +68,7 @@ const CreateTweet = props => {
             <form onSubmit={addTweetHandler}>
                <h2> Tweet: </h2>
                 <input type="text" name="tweet" value={tweet} onChange={(event )=> {setTweet(event.target.value)}} />
-                <input type="number" name="user" value={user} onChange={(event) => {setUser(event.target.value)}}/>
+                <input type="number" name="user" value={userid} onChange={(event) => {setUserid(event.target.value)}}/>
                 <input type="submit" value="tweet" />
             </form>
         </div>

@@ -7,7 +7,7 @@ const TweetApi = {
         fetch(url, {
             method: 'POST', 
             body: JSON.stringify(tweet),
-            headers: {"Content-Type": "application/json" }
+            headers: {"Content-Type": "application/json" , "authentication":  "Bearer " + sessionStorage.getItem("Authentication"), "Principal": sessionStorage.getItem("Principal") }
         })
         .then (response => {
             console.log(response);
