@@ -8,6 +8,18 @@ import Like from "../components/Like"
 function AllTweets() {
   const [tweets, setTweets] = useState([]);
 
+useEffect(() => {
+   
+  axios.get('http://localhost:8080/user', {
+    headers: {
+      Authorization: 'Bearer ' +  localStorage.getItem("token")
+    }} ).then(
+      res => {console.log(res)},
+      err => {console.log(err)}
+    )
+}, []);
+
+
   useEffect(() => {
     axios
       .get('http://localhost:8080/api/tweet/all')
