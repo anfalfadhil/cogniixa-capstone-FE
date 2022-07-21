@@ -1,5 +1,8 @@
-let url = 'http://localhost:8080/api/user'
+let url = 'http://localhost:8080/user'
 let newUserURL = 'http://localhost:8080/user/new'
+let loginURL = 'http://localhost:8080/authenticate'
+
+
 
 
 
@@ -39,8 +42,8 @@ const UserApi = {
     },
 
     loginUser: (user) => {
-        fetch(url, {
-            method: 'GET', 
+        fetch(loginURL, {
+            method: 'POST', 
             body: JSON.stringify(user),
             headers: {"Content-Type": "application/json" }
         })

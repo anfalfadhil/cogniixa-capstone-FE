@@ -22,14 +22,15 @@ const CreateTweet = props => {
 
 
       const getUserByIdEntered = (id) => {
-        const fetchedUser = UserApi.getById(id);
+        const fetchedUser = UserApi.getUserById(id);
         setUser(fetchedUser);
       }
 
     const addTweetHandler = (event) => {
+        event.preventDefault()
         getUserByIdEntered(user)
         console.log("Hello")
-        event.preventDefault()
+        
         console.log("Hello")
         console.log("tweet: " + tweet);
         console.log("user: " + user);
