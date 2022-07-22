@@ -17,7 +17,8 @@
 }
 
 .all-tweets-title {
-    color: rgb(9, 9, 38);;
+    color: rgb(9, 9, 38);
+    text-align:center;
 }
 
 
@@ -46,4 +47,26 @@ p, .tweet-comments, .tweet-author, .tweet-text, a {
 .tweet-author {
     position: relative;
     left: 0;
+}
+
+.tweet-text {
+    text-align: center;
+    color:rgb(9, 9, 38);
+    /* border: 1px solid black; */
+    border-radius: 5px;
+    background-color: rgba(9, 9, 38, 0.232);
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.comment1 {
+    border: 1px solid black;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 1rem;
+
+}
+
+.tweet-comments {
+    margin: 1rem;
 }
