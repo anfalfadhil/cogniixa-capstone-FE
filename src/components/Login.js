@@ -59,6 +59,8 @@ const Login = () => {
             sessionStorage.setItem("Principal", "ROLE_USER");
             console.log("This is session storage " + sessionStorage.getItem("Authentication"))
             
+
+           console.log("storage token ----> " +  localStorage.getItem("token"))
         })
         .catch(error => console.log(error))
 

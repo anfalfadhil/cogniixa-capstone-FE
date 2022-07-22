@@ -68,7 +68,7 @@ const CreateTweet = props => {
             <form onSubmit={addTweetHandler}>
                <h2> Tweet: </h2>
                 <input type="text" name="tweet" value={tweet} onChange={(event )=> {setTweet(event.target.value)}} />
-                <input type="number" name="user" value={userid} onChange={(event) => {setUserid(event.target.value)}}/>
+                {/* <input type="number" name="user" value={userid} onChange={(event) => {setUserid(event.target.value)}}/> */}
                 <input type="submit" value="tweet" />
             </form>
         </div>
