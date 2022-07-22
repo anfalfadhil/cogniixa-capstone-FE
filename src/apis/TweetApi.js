@@ -1,4 +1,4 @@
-let url = 'http://ec2-52-205-204-127.compute-1.amazonaws.com/api/tweet'
+let url = 'https://ec2-52-205-204-127.compute-1.amazonaws.com/api/tweet'
 
 
 const TweetApi = {

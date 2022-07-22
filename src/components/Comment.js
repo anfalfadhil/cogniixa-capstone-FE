@@ -4,7 +4,7 @@ import React, {useState} from "react";
 const Comment = props => {
     const tweetid = props.tweetid
     // const commentOb = props.commentO
-    const comment_url = `http://ec2-52-205-204-127.compute-1.amazonaws.com/api/comment/${tweetid}`
+    const comment_url = `https://ec2-52-205-204-127.compute-1.amazonaws.com/api/comment/${tweetid}`
     const [comment, setComment] = useState("")
 
     const commentO = {

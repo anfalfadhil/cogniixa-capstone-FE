@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Like = props => {
     const tweetid = props.tweetid
-    const like_url = `http://ec2-52-205-204-127.compute-1.amazonaws.com/api/tweet/like/${tweetid}`
+    const like_url = `https://ec2-52-205-204-127.compute-1.amazonaws.com/api/tweet/like/${tweetid}`
     // console.log("This is the tweet id " + tweetid)
     const [like, setLike] = useState(0)
     const [likeActive, setLikeActive] = useState(false);
