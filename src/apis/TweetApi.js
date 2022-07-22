@@ -5,9 +5,12 @@ const TweetApi = {
 
     createTweet: (tweet) => {
         fetch(url, {
+            // credentials: 'include',
             method: 'POST', 
             body: JSON.stringify(tweet),
-            headers: {"Content-Type": "application/json" , "authentication":  "Bearer " + sessionStorage.getItem("Authentication"), "Principal": sessionStorage.getItem("Principal") }
+            headers: {"Content-Type": "application/json" , 
+                    "Authorization": sessionStorage.getItem("Authentication"), 
+                    "Principal": sessionStorage.getItem("Principal"), },
         })
         .then (response => {
             console.log(response);
@@ -35,6 +38,9 @@ const TweetApi = {
         })
         .catch(error => console.log(error))
     },
+
+    
+
  
 
 

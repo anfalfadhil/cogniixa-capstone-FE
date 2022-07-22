@@ -54,8 +54,10 @@ const Login = () => {
         .then( (data) => {
             console.log(data.jwt)
             setToken(data.jwt)
-            sessionStorage.setItem("Authentication", "Bearer " + token);
+            console.log(token)
+            sessionStorage.setItem("Authentication", "Bearer " + data.jwt);
             sessionStorage.setItem("Principal", "ROLE_USER");
+            console.log("This is session storage " + sessionStorage.getItem("Authentication"))
             
         })
         .catch(error => console.log(error))
