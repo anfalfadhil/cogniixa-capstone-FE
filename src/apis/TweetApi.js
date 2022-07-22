@@ -1,13 +1,16 @@
-let url = 'http://localhost:8080/tweets'
+let url = 'http://localhost:8080/api/tweet'
 
 
 const TweetApi = {
 
     createTweet: (tweet) => {
         fetch(url, {
+            // credentials: 'include',
             method: 'POST', 
             body: JSON.stringify(tweet),
-            headers: {"Content-Type": "application/json" }
+            headers: {"Content-Type": "application/json" , 
+                    "Authorization": sessionStorage.getItem("Authentication"), 
+                    "Principal": sessionStorage.getItem("Principal"), },
         })
         .then (response => {
             console.log(response);
@@ -35,6 +38,9 @@ const TweetApi = {
         })
         .catch(error => console.log(error))
     },
+
+    
+
  
 
 
