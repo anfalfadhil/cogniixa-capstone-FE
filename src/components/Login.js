@@ -5,7 +5,7 @@ import UserApi from "../apis/UserApi";
 import axios from '../apis/axios'
 
 
-const LOGIN_URL = 'http://localhost:8080/authenticate'
+const LOGIN_URL = 'http://ec2-52-205-204-127.compute-1.amazonaws.com/authenticate'
 const Login = () => {
 
 

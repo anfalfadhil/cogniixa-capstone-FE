@@ -1,6 +1,6 @@
-let url = 'http://localhost:8080/user'
-let newUserURL = 'http://localhost:8080/user/new'
-let loginURL = 'http://localhost:8080/authenticate'
+let url = 'http://ec2-52-205-204-127.compute-1.amazonaws.com/user'
+let newUserURL = 'http://ec2-52-205-204-127.compute-1.amazonaws.com/user/new'
+let loginURL = 'http://ec2-52-205-204-127.compute-1.amazonaws.com/authenticate'
 
 
 

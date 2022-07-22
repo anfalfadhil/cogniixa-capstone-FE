@@ -1,4 +1,4 @@
-let url = 'http://localhost:8080/api/tweet'
+let url = 'http://ec2-52-205-204-127.compute-1.amazonaws.com/api/tweet'
 
 
 const TweetApi = {

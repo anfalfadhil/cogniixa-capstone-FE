@@ -12,7 +12,7 @@ function AllTweets() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:8080/api/tweet/all')
+      .get('http://ec2-52-205-204-127.compute-1.amazonaws.com/api/tweet/all')
       .then((response) => {
         // return response.json();
         console.log(response.data);
