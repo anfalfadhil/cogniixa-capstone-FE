@@ -31,10 +31,10 @@ function AllTweets() {
         return (
           
           <div className="card" key={tweet.id}>
-            <h2 > {tweet.user.username} </h2>
+            <h2 className="tweet-author"> {tweet.user.username} </h2>
             <Link to={`/tweets/${tweet.id}`}>
 
-              <p >{tweet.text}</p>
+              <p className="tweet-text">{tweet.text}</p>
 
             </Link>
             {/* <p>{tweet.id}</p> */}
@@ -44,7 +44,7 @@ function AllTweets() {
             <div className = "comment" key = {tweet.comments.id}>
                 {tweet.comments.map(comment =>
                   <div className = "comment1" key = {tweet.comments.id}>
-                    <p>{comment.text}</p>
+                    <p className="tweet-comments">{comment.text}</p>
                   </div>
                   )}
             </div>
