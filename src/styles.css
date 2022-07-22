@@ -70,3 +70,61 @@ p, .tweet-comments, .tweet-author, .tweet-text, a {
 .tweet-comments {
     margin: 1rem;
 }
+
+.like-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    margin: 5px;
+    position: relative;
+    float:right;
+}
+
+.signup-container {
+    margin: 1rem;
+    width:40rem;
+    margin-left:auto;
+    margin-right:auto;
+    padding: 2rem;
+    background-color: rgb(234, 239, 253);
+    text-decoration: none;
+    border: 2px solid rgb(9, 9, 38);
+    border-radius: 10px;
+    box-shadow:  3px 3px 5px 6px #ccc;
+}
+
+input {
+    margin: 1rem auto;
+    display: block;
+    height: 2rem;
+    width: 40%;
+    border-radius: 10px;
+}
+
+label {
+    display: block;
+    text-align: center;
+    margin: auto;
+    font-size:1.5em;
+    border-radius: 10px;
+}
+
+.signup-title {
+    text-align: center;
+    
+}
+
+.signup-btn {
+    border: 2px solid rgb(9, 9, 38);
+    border-radius: 10px;
+    height: 3rem;
+    width: 40%;
+    font-size: 1.5rem;
+    padding: .5rem;
+    text-align: center;
+    margin: auto;
+}
+.login-btn {
+    margin: 1rem auto;
+    display:block;
+}

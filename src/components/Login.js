@@ -89,8 +89,8 @@ const Login = () => {
 
     return (
 
-        <div>
-            <h2>Log in</h2>
+        <div className="signup-container">
+            <h2 className="signup-title">Log in</h2>
  
             <p className= {errMsg? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
             <form onSubmit={handleSubmit}>
@@ -113,7 +113,7 @@ const Login = () => {
                         value={password}
                         required
                   />
-                  <button>Log in</button>
+                  <button className="signup-btn login-btn">Log in</button>
             </form>
         </div>)
 }

@@ -55,8 +55,8 @@ const Signup =() => {
 
 
     return (
-        <div>
-            <h1>Signup page</h1>
+        <div className="signup-container">
+            <h1 className="signup-title">Signup page</h1>
             <form onSubmit={signupHandler}>
 
                 <label htmlFor="username">Username</label>
@@ -65,7 +65,7 @@ const Signup =() => {
                 <input type="text" name="email" value={email} onChange={(event) => {setEmail(event.target.value)}}/>
                 <label htmlFor="password">Passowrd</label>
                 <input type="text" name="password" value={password} onChange={(event) => {setPassword(event.target.value)}}/>
-                <input type="submit" value="Sign up" />
+                <input className="signup-btn" type="submit" value="Sign up" />
             </form>
         </div>)
 

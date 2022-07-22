@@ -60,9 +60,9 @@ const CreateTweet = props => {
     }
 
     return (
-        <div>
+        <div className="signup-container">
              {error && <p>Something went wrong...Please try again!</p>}
-            <h2>Add a new tweet</h2>
+            <h2 className="signup-title">Add a new tweet</h2>
 
 
             <form onSubmit={addTweetHandler}>

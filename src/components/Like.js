@@ -53,7 +53,7 @@ const Like = props => {
 
     return (
         <div>
-            <button onClick={likeHandler}>❤️{likes.length}</button>  {/* Search red heart emoji*/}
+            <button className="like-btn" onClick={likeHandler}>❤️{likes.length}</button>  {/* Search red heart emoji*/}
         </div>)
 }
 
