@@ -14,7 +14,7 @@ function TweetDetails({ match }) {
     let id = match.params.id;
     console.log(id)
 
-    const URL = "http://localhost:8080/tweets"
+    const URL = "http://ec2-52-205-204-127.compute-1.amazonaws.com/tweets"
     //fetching the tweet from db
     useEffect(() => {
         axios
