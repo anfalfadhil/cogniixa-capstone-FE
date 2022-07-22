@@ -1,0 +1,49 @@
+/* body {
+    background-color: rgb(0, 58, 103);
+} */
+
+.card {
+    margin: 1rem;
+    width:40rem;
+    margin-left:auto;
+    margin-right:auto;
+    padding: 2rem;
+    background-color: rgb(234, 239, 253);
+    text-decoration: none;
+    border: 2px solid rgb(9, 9, 38);
+    border-radius: 10px;
+    box-shadow:  3px 3px 5px 6px #ccc;
+    
+}
+
+.all-tweets-title {
+    color: rgb(9, 9, 38);;
+}
+
+
+.nav-container {
+    background-color:rgb(9, 9, 38);
+    height: 4rem;
+    display:flexbox;
+    padding: 1rem;
+    justify-content: flex-end;
+   
+}
+
+.nav-link {
+    color: white;
+    display: inline;
+    display:flexbox;
+    padding: 1rem;
+    justify-content: flex-end;
+
+}
+
+p, .tweet-comments, .tweet-author, .tweet-text, a { 
+    text-decoration: none;
+}
+
+.tweet-author {
+    position: relative;
+    left: 0;
+}

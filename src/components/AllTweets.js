@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Like from "../components/Like"
-
+import '../App.css'
 
 function AllTweets() {
   const [tweets, setTweets] = useState([]);
@@ -39,17 +39,31 @@ useEffect(() => {
 
       {tweets.map((tweet) => {
         return (
-          <div className="card" key={tweet._id}>
-            <Link to={`/tweets/${tweet.id}`}>
-              <h2> {tweet.username} </h2>
-              <p>{tweet.text}</p>
+          // <Link to={`/tweets/${tweet.id}`}>
+            <div className="card" key={tweet._id}>
+            
+              <h2 className="tweet-author"> {tweet.user.username} </h2>
+              <p className="tweet-text">{tweet.text}</p>
+              <p>{tweet.likes.length}</p>
               <Like />
-             
-            </Link>
+            
+            
+
+            <div>
+                {tweet.comments.map(comment =>
+                  <p className="tweet-comments">{comment.text}</p>
+                  )}
+              </div>
           </div>
+
+          // </Link>
         );
       })}
+
+      
     </div>
+
+
   );
 }
 

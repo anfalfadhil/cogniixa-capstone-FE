@@ -11,6 +11,7 @@ const Like = (post) => {
     const [like, setLike] = useState(11)
     const [likeActive, setLikeActive] = useState(false);
 
+    
 
     // const currentTweet = post.id;
     // const currentUser = user.id;
